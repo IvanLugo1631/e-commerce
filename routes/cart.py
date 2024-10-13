@@ -48,5 +48,7 @@ def update_cart_item(item_id: int, quantity: int, db: Session = Depends(get_db))
 
 @router.get("/cart/total")
 def get_cart_total(db: Session = Depends(get_db)):
-    total = db.query(func.sum(CartItem.product.price * CartItem.quantity)).scalar()
+    total = db.query(func.sum(CartItem.quantity * Product.price))\
+    .join(Product, CartItem.product_id == Product.id)\
+    .scalar()    
     return {"total": total}

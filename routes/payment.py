@@ -7,7 +7,9 @@ import stripe
 from fastapi import Request
 import os
 import logging
+from dotenv import load_dotenv
 
+load_dotenv()
 router = APIRouter()
 
 # Get the Stripe secret key from environment variable

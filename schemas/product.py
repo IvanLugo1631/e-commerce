@@ -1,5 +1,5 @@
 # app/schemas/product.py
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 class ProductBase(BaseModel):
     title: str
@@ -14,5 +14,5 @@ class ProductCreate(ProductBase):
 class Product(ProductBase):
     id: int
 
-    class Config:
-        orm_mode = True
+    class Config(ConfigDict):
+        from_attributes = True

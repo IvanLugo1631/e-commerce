@@ -1,6 +1,6 @@
 
 # app/schemas/cart.py
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from .product import Product
 
 class CartItemBase(BaseModel):
@@ -14,5 +14,5 @@ class CartItem(CartItemBase):
     id: int
     product: Product
 
-    class Config:
-        orm_mode = True
+    class Config(ConfigDict):
+        from_attributes = True
