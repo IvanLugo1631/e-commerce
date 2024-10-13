@@ -36,9 +36,9 @@ def get_cart(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
         cache[cache_key] = items
         return items
 
-@router.put("/cart/{item_id}", response_model=CartItemSchema)
-def update_cart_item(item_id: int, quantity: int, db: Session = Depends(get_db)):
-    db_item = db.query(CartItem).filter(CartItem.id == item_id).first()
+@router.put("/cart/{product_id}", response_model=CartItemSchema)
+def update_cart_item(product_id: int, quantity: int, db: Session = Depends(get_db)):
+    db_item = db.query(CartItem).filter(CartItem.product_id == product_id).first()
     if not db_item:
         raise HTTPException(status_code=404, detail="Cart item not found")
     db_item.quantity = quantity
