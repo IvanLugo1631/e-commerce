@@ -3,7 +3,6 @@ from fastapi import FastAPI
 from routes import products, cart, payment
 from database import engine, Base
 import uvicorn
-import conf
 
 app = FastAPI()
 
