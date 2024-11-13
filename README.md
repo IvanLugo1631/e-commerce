@@ -1,7 +1,7 @@
-# Ecommerce App
+# Ecommerce App - DEMO
 
 ## Description
-This is an ecommerce app built with FastAPI. It allows users to browse and purchase products online.
+This is an ecommerce app built with FastAPI. It allows users to browse and purchase products online. All information is found in there to make it clear how it works.
 
 ## Installation
 To download and install the app, follow these steps:
